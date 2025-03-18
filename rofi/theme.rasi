@@ -1,0 +1,16 @@
+* {
+  cursor:             default;
+  transparency:       "real";
+  fullscreen:         false;
+  font:               "FOT-RodinPro DB 12";
+  bold-font:          "FOT-Rodin Pro UB 12";
+  prompt-font:        "FOT-RodinPro DB 48";
+  icon24:             "JetBrainsMonoNerdFontMono 24";
+  icon48:             "JetBrainsMonoNerdFontMono 48";
+  main-bg:            rgba ( 42, 46, 50, 100 % );
+  main-fg:            rgba ( 243, 243, 243, 100 % );
+  select-bg:          @main-fg;
+  select-fg:          @main-bg;
+  tp-bg:              rgba ( 42, 46, 50, 80 % );
+  tp-fg:              rgba ( 243, 243, 243, 80 % );
+}

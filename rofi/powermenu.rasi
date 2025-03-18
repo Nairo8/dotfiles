@@ -1,0 +1,107 @@
+/*****----- Configuration -----*****/
+configuration {
+  show-icons:                 false;
+  kb-select-1:                "1";
+  kb-select-2:                "2";
+  kb-select-3:                "3";
+  kb-select-4:                "4";
+  kb-select-5:                "5";
+}
+
+@theme "~/.config/rofi/theme.rasi"
+
+/*****----- Main Window -----*****/
+window {
+  border:                      1px;
+  border-radius:               1.0em;
+  border-color:                @main-fg;
+  location:                    center;
+  anchor:                      center;
+  cursor:                      "default";
+  background-color:            @tp-bg;
+  width:                       28.0em;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+  enabled:                     true;
+  spacing:                     1.0em;
+  padding:                     1.0em;
+  background-color:            transparent;
+  children:                    [ "dummy", "inputbar", "listview", "message", "dummy" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+  enabled:                     true;
+  background-color:            transparent;
+  children:                    [ "dummy", "prompt", "dummy" ];
+}
+
+dummy {
+  background-color:            transparent;
+}
+
+prompt {
+  padding:                     0.0em 0.0em 2.0em 0.0em;
+  enabled:                     true;
+  font:                        @prompt-font;
+  background-color:            transparent;
+  text-color:                  @main-fg;
+}
+
+/*****----- Message -----*****/
+message {
+  enabled:                     true;
+  margin:                      0.0em 6.0em;
+  padding:                     1.0em;
+  border-radius:               1.0em;
+  background-color:            @main-bg;
+  children:                    [ "dummy", "textbox", "dummy" ];
+}
+textbox {
+  background-color:            transparent;
+  text-color:                  @main-fg;
+  vertical-align:              0.5;
+  horizontal-align:            0.5;
+}
+
+/*****----- Listview -----*****/
+listview {
+  enabled:                     true;
+  expand:                      false;
+  columns:                     4;
+  lines:                       1;
+  cycle:                       true;
+  dynamic:                     true;
+  scrollbar:                   false;
+  layout:                      vertical;
+  reverse:                     false;
+  fixed-height:                true;
+  fixed-columns:               true;
+  background-color:            transparent;
+  cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+  enabled:                     true;
+  margin:                      0.0em 1.0em;
+  padding:                     0.5em;
+  border-radius:               1.0em;
+  background-color:            transparent;
+  text-color:                  @main-fg;
+  cursor:                      pointer;
+}
+element-text {
+  font:                        @icon48;
+  background-color:            transparent;
+  text-color:                  inherit;
+  cursor:                      inherit;
+  vertical-align:              0.5;
+  horizontal-align:            0.5;
+}
+element selected.normal {
+  background-color:            @select-bg;
+  text-color:                  @select-fg;
+}

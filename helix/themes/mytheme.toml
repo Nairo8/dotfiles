@@ -1,0 +1,33 @@
+inherits = "nightfox"
+
+"ui.background" = {}
+
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"comment.block.documentation" = { fg = "comment", modifiers = ["italic"] } # Doc comments, e.g '///' in rust.
+
+"constant" = { fg = "orange-bright", modifiers = ["bold"] } # Constant value
+"constant.builtin" = { fg = "orange-bright", modifiers = ["bold"] } # Special constants like `true`, `false`, `none`, etc.
+"constant.builtin.boolean" = { fg = "orange", modifiers = ["bold"] } # True or False.
+"constant.character" = { fg = "green", modifiers = ["bold"] } # Constant of character type.
+"constant.character.escape" = { fg = "yellow-bright", modifiers = ["bold"] } # escape codes like \n.
+"constant.numeric"  = { fg = "orange", modifiers = ["bold"] } # constant integer or float value.
+
+"function" = { fg = "blue-bright", modifiers = ["italic"] }
+"function.builtin" = { fg = "red", modifiers = ["italic"] }
+"function.macro" = { fg = "red", modifiers = ["italic"] }
+# "function.special" = { fg = "blue-bright" } # Preprocessor function in C.
+# "function.method" = { fg = "blue-bright" } # Class / Struct methods.
+
+"keyword" = { fg = "magenta", modifiers = ["italic"] } # Language reserved keywords.
+# "keyword.control" = { fg = "pink", modifiers = ["italic"] } # Control keywords.
+"keyword.control.conditional" = { fg = "magenta-bright", modifiers = ["italic"] } # `if`, `else`, `elif`.
+"keyword.control.repeat" = { fg = "magenta-bright", modifiers = ["italic"] } # `for`, `while`, `loop`.
+# "keyword.control.import" = { fg = "pink-bright", modifiers = ["italic"] } # `import`, `export` `use`.
+"keyword.control.return" = { fg = "magenta", modifiers = ["italic"] } # `return` in most languages.
+"keyword.control.exception" = { fg = "magenta", modifiers = ["italic"] } # `try`, `catch`, `raise`/`throw` and related.
+"keyword.operator" = { fg = "fg2", modifiers = ["italic"] } # 'or', 'and', 'in'.
+# "keyword.directive" = { fg = "pink-bright", modifiers = ["italic"] } # Preprocessor directives (#if in C...).
+"keyword.function" = { fg = "red", modifiers = ["italic"] } # The keyword to define a function: 'def', 'fun', 'fn'.
+"keyword.storage" = { fg = "magenta", modifiers = ["italic"] } # Keywords describing how things are stored
+"keyword.storage.type" = { fg = "magenta", modifiers = ["italic"] } #  The type of something, class, function, var, let, etc.
+"keyword.storage.modifier" = { fg = "yellow", modifiers = ["italic"] } # Storage modifiers like static, mut, const, ref, etc.

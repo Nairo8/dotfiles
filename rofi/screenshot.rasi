@@ -1,0 +1,69 @@
+/*****----- Configuration -----*****/
+configuration {
+  show-icons:                 false;
+  kb-select-1:                "1";
+  kb-select-2:                "2";
+  kb-select-3:                "3";
+  kb-select-4:                "4";
+}
+
+@theme "~/.config/rofi/theme.rasi"
+
+/*****----- Main Window -----*****/
+window {
+  width:                       14em;
+  margin:                      5px;
+  border:                      1px;
+  border-radius:               1.0em;
+  border-color:                @main-fg;
+  location:                    north;
+  anchor:                      center;
+  cursor:                      "default";
+  background-color:            @tp-bg;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+  enabled:                     true;
+  background-color:            transparent;
+  children:                    [ "listview" ];
+}
+
+/*****----- Listview -----*****/
+listview {
+  enabled:                     true;
+  padding:                     0.5em;
+  expand:                      false;
+  columns:                     4;
+  lines:                       1;
+  cycle:                       true;
+  dynamic:                     true;
+  scrollbar:                   false;
+  layout:                      vertical;
+  reverse:                     false;
+  fixed-height:                true;
+  fixed-columns:               true;
+  background-color:            transparent;
+  cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+  enabled:                     true;
+  border-radius:               1.0em;
+  background-color:            transparent;
+  text-color:                  @main-fg;
+  cursor:                      pointer;
+}
+element-text {
+  font:                        @icon48;
+  background-color:            transparent;
+  text-color:                  inherit;
+  cursor:                      inherit;
+  vertical-align:              0.5;
+  horizontal-align:            0.5;
+}
+element selected.normal {
+  background-color:            @select-bg;
+  text-color:                  @select-fg;
+}

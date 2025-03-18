@@ -1,0 +1,45 @@
+theme = "mytheme"
+
+[editor]
+cursorline = true
+line-number = "relative"
+scrolloff = 8
+
+bufferline = "always"
+color-modes = true
+
+completion-timeout = 50
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "warning" # show warnings and errors on the cursorline inline
+
+[editor.statusline]
+mode.normal = ""
+mode.insert = ""
+mode.select = ""
+left = [
+  "mode",
+  "spinner",
+  "version-control",
+  "spacer",
+  "diagnostics",
+  "file-name",
+  "read-only-indicator",
+  "file-modification-indicator"
+]
+center = []
+right = [
+  "selections",
+  "register",
+  "position",
+  "file-encoding"
+]
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+character = "▏" # Some characters that work well: "╎", "┆", "┊", "⸽"
+skip-levels = 0

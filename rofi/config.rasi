@@ -1,0 +1,138 @@
+/*****----- Configuration -----*****/
+configuration {
+  modi:                        "drun,filebrowser,window,run";
+  show-icons:                  true;
+  display-drun:                "";
+  display-run:                 "";
+  display-filebrowser:         "";
+  display-window:              "";
+  drun-display-format:         "{name}";
+  window-format:               "{w}{t}";
+  icon-theme:                  "Papirus-Dark";
+}
+
+@theme "~/.config/rofi/theme.rasi"
+
+/*****----- Main Window -----*****/
+window {
+  width:                       20.0em;
+  enabled:                     true;
+  border:                      1px;
+  border-radius:               1.0em;
+  border-color:                @main-fg;
+  background-color:            transparent;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+  enabled:                     true;
+  orientation:                 vertical;
+  children:                    [ "inputbar" , "listbox", "mode-switcher" ];
+  background-color:            @tp-bg;
+}
+
+
+/*****----- Inputbar -----*****/
+inputbar {
+  enabled:                     true;
+  padding:                     2.0em;
+  background-color:            transparent;
+  background-image:            url("~/Pictures/Wallpapers/nier_yorha.png", width);
+  children:                    [ "entry" ];
+}
+entry {
+  border-radius:               1.0em;
+  enabled:                     true;
+  padding:                     1.0em;
+  text-color:                  @main-fg;
+  background-color:            @main-bg;
+}
+
+
+/*****----- Mode-switcher -----*****/
+mode-switcher {
+  width:                       8.0em;
+  orientation:                 horizontal;
+  enabled:                     true;
+  padding:                     0.5em 1em;
+  spacing:                     1.0em;
+  background-color:            @main-bg;
+}
+button {
+  font:                        @icon24;
+  cursor:                      pointer;
+  border-radius:               1.0em;
+  background-color:            inherit;
+  text-color:                  @main-fg;
+}
+button selected {
+  background-color:            @main-fg;
+  text-color:                  @main-bg;
+}
+
+
+/*****----- Listsview -----*****/
+listbox {
+  orientation:                 vertical;
+  children:                    [ "listview" ];
+  background-color:            transparent;
+}
+listview {
+  padding:                     0.5em 1.0em;
+  enabled:                     true;
+  columns:                     1;
+  lines:                       8;
+  cycle:                       true;
+  dynamic:                     false;
+  scrollbar:                   false;
+  layout:                      vertical;
+  fixed-height:                true;
+  fixed-columns:               true;
+  cursor:                      "default";
+  background-color:            transparent;
+  text-color:                  @main-fg;
+}
+
+/*****----- Elements -----*****/
+element {
+  orientation:                 horizontal;
+  enabled:                     true;
+  spacing:                     0.5em;
+  padding:                     0.5em;
+  border-radius:               1.0em;
+  cursor:                      pointer;
+  background-color:            transparent;
+  text-color:                  @main-fg;
+}
+element selected.normal {
+  background-color:            @select-bg;
+  text-color:                  @select-fg;
+}
+element-icon {
+  size:                        1.0em;
+  cursor:                      inherit;
+  background-color:            transparent;
+  text-color:                  inherit;
+}
+element-text {
+  vertical-align:              0.5;
+  cursor:                      inherit;
+  background-color:            transparent;
+  text-color:                  inherit;
+  text-style:                  bold;
+}
+
+/*****----- Error-message -----*****/
+error-message {
+  text-color:                  @main-fg;
+  background-color:            @main-bg;
+  text-transform:              capitalize;
+  children:                    [ "textbox" ];
+}
+
+textbox {
+  text-color:                  inherit;
+  background-color:            inherit;
+  vertical-align:              0.5;
+  horizontal-align:            0.5;
+}

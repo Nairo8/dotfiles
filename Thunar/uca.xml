@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>org.wezfurlong.wezterm</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1726267184899961-1</unique-id>
+	<command>wezterm start --cwd %f</command>
+	<description>WezTerm open from here</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+</actions>
