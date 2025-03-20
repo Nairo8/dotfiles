@@ -9,7 +9,8 @@ local background = "nier_sword.png"
 local default_prog
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-  default_prog = {'pwsh', '-NoLogo'}
+  local win_home = os.getenv('USERPROFILE')
+  default_prog = {'pwsh.exe', '-NoExit', '-NoLogo', '-File', win_home .. '\\.config\\Nairo.ps1'}
 end
 
 config = {
