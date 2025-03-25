@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<FCParameters>
+
+  <FCParamGroup Name="Root">
+    <FCParamGroup Name="Index">
+      <FCParamGroup Name="0">
+        <FCParamGroup Name="Context">
+          <FCText Name="VertexSign">==</FCText>
+          <FCText Name="EdgeSign">==</FCText>
+          <FCText Name="FaceSign">==</FCText>
+          <FCText Name="ObjectSign">==</FCText>
+          <FCBool Name="Enabled" Value="1"/>
+          <FCInt Name="VertexValue" Value="10"/>
+          <FCInt Name="EdgeValue" Value="10"/>
+          <FCInt Name="FaceValue" Value="10"/>
+          <FCInt Name="ObjectValue" Value="10"/>
+        </FCParamGroup>
+        <FCText Name="ToolList">Std_ViewTop.,.Std_New.,.Std_ViewRight.,.Std_BoxSelection.,.Std_ViewBottom.,.Std_ViewIsometric.,.Std_ViewLeft.,.Std_ViewScreenShot</FCText>
+        <FCText Name="Shape">Pie</FCText>
+        <FCText Name="TriggerMode">Press</FCText>
+        <FCBool Name="EnableShorcut" Value="0"/>
+        <FCBool Name="DisplayPreselect" Value="0"/>
+        <FCBool Name="ImmediateTriggerContext" Value="0"/>
+        <FCInt Name="Radius" Value="80"/>
+        <FCInt Name="Button" Value="32"/>
+        <FCInt Name="HoverDelay" Value="100"/>
+        <FCInt Name="NumColumn" Value="0"/>
+      </FCParamGroup>
+      <FCParamGroup Name="2">
+        <FCParamGroup Name="Context">
+          <FCText Name="VertexSign">==</FCText>
+          <FCText Name="EdgeSign">==</FCText>
+          <FCText Name="FaceSign">==</FCText>
+          <FCText Name="ObjectSign">==</FCText>
+          <FCBool Name="Enabled" Value="0"/>
+          <FCInt Name="VertexValue" Value="10"/>
+          <FCInt Name="EdgeValue" Value="10"/>
+          <FCInt Name="FaceValue" Value="10"/>
+          <FCInt Name="ObjectValue" Value="10"/>
+        </FCParamGroup>
+        <FCText Name="ToolList">Sketcher_CreatePolyline.,.Sketcher_CompCreateRectangles.,.Sketcher_CompCreateConic.,.Sketcher_CompCreateArc.,.Sketcher_CreateRegularPolygon.,.Sketcher_CompSlot.,.Sketcher_ToggleConstruction.,.Sketcher_CompCurveEdition</FCText>
+        <FCText Name="Shape">Pie</FCText>
+        <FCText Name="TriggerMode">Press</FCText>
+        <FCText Name="DefaultWorkbench">Sketcher</FCText>
+        <FCBool Name="EnableShorcut" Value="0"/>
+        <FCBool Name="DisplayPreselect" Value="0"/>
+        <FCBool Name="ImmediateTriggerContext" Value="0"/>
+        <FCInt Name="Radius" Value="80"/>
+        <FCInt Name="Button" Value="32"/>
+        <FCInt Name="HoverDelay" Value="100"/>
+        <FCInt Name="NumColumn" Value="0"/>
+      </FCParamGroup>
+      <FCParamGroup Name="4">
+        <FCParamGroup Name="Context">
+          <FCText Name="VertexSign">==</FCText>
+          <FCText Name="EdgeSign">==</FCText>
+          <FCText Name="FaceSign">==</FCText>
+          <FCText Name="ObjectSign">==</FCText>
+          <FCBool Name="Enabled" Value="0"/>
+          <FCInt Name="VertexValue" Value="0"/>
+          <FCInt Name="EdgeValue" Value="0"/>
+          <FCInt Name="FaceValue" Value="0"/>
+          <FCInt Name="ObjectValue" Value="0"/>
+        </FCParamGroup>
+        <FCText Name="TriggerMode">Press</FCText>
+        <FCText Name="Shape">Pie</FCText>
+        <FCText Name="ToolList">PartDesign_NewSketch.,.PartDesign_Pad.,.PartDesign_Revolution.,.PartDesign_AdditiveLoft.,.PartDesign_AdditivePipe.,.PartDesign_Pocket.,.PartDesign_Hole.,.PartDesign_Groove.,.PartDesign_SubtractiveLoft.,.PartDesign_SubtractivePipe</FCText>
+        <FCText Name="DefaultWorkbench">PartDesign</FCText>
+        <FCBool Name="ImmediateTriggerContext" Value="0"/>
+        <FCBool Name="EnableShorcut" Value="0"/>
+        <FCBool Name="DisplayPreselect" Value="0"/>
+        <FCInt Name="Radius" Value="80"/>
+        <FCInt Name="Button" Value="32"/>
+        <FCInt Name="HoverDelay" Value="100"/>
+        <FCInt Name="NumColumn" Value="0"/>
+      </FCParamGroup>
+      <FCParamGroup Name="5">
+        <FCParamGroup Name="Context">
+          <FCText Name="VertexSign">&gt;=</FCText>
+          <FCText Name="EdgeSign">&gt;=</FCText>
+          <FCText Name="FaceSign">==</FCText>
+          <FCText Name="ObjectSign">==</FCText>
+          <FCBool Name="Enabled" Value="1"/>
+          <FCInt Name="VertexValue" Value="0"/>
+          <FCInt Name="EdgeValue" Value="0"/>
+          <FCInt Name="FaceValue" Value="0"/>
+          <FCInt Name="ObjectValue" Value="0"/>
+        </FCParamGroup>
+        <FCText Name="TriggerMode">Press</FCText>
+        <FCText Name="Shape">TableRight</FCText>
+        <FCText Name="ToolList">Sketcher_ConstrainCoincidentUnified.,.Sketcher_CompHorVer.,.Sketcher_ConstrainParallel.,.Sketcher_ConstrainPerpendicular.,.Sketcher_ConstrainTangent.,.Sketcher_ConstrainEqual.,.Sketcher_ConstrainSymmetric.,.Sketcher_ConstrainBlock.,.Sketcher_CompToggleConstraints.,.Sketcher_Dimension</FCText>
+        <FCText Name="ContextWorkbench">Sketcher</FCText>
+        <FCText Name="ShortcutKey"></FCText>
+        <FCBool Name="EnableShorcut" Value="0"/>
+        <FCBool Name="DisplayPreselect" Value="0"/>
+        <FCBool Name="ImmediateTriggerContext" Value="1"/>
+        <FCInt Name="Radius" Value="80"/>
+        <FCInt Name="Button" Value="32"/>
+        <FCInt Name="HoverDelay" Value="100"/>
+        <FCInt Name="NumColumn" Value="2"/>
+      </FCParamGroup>
+      <FCParamGroup Name="1">
+        <FCParamGroup Name="Context">
+          <FCText Name="VertexSign">==</FCText>
+          <FCText Name="EdgeSign">&gt;=</FCText>
+          <FCText Name="FaceSign">&gt;=</FCText>
+          <FCText Name="ObjectSign">==</FCText>
+          <FCBool Name="Enabled" Value="1"/>
+          <FCInt Name="VertexValue" Value="0"/>
+          <FCInt Name="EdgeValue" Value="0"/>
+          <FCInt Name="FaceValue" Value="0"/>
+          <FCInt Name="ObjectValue" Value="0"/>
+        </FCParamGroup>
+        <FCText Name="TriggerMode">Press</FCText>
+        <FCText Name="Shape">Pie</FCText>
+        <FCText Name="ToolList">PartDesign_Fillet.,.PartDesign_Chamfer.,.PartDesign_Draft.,.PartDesign_Thickness</FCText>
+        <FCText Name="ContextWorkbench">PartDesign</FCText>
+        <FCBool Name="EnableShorcut" Value="0"/>
+        <FCBool Name="DisplayPreselect" Value="0"/>
+        <FCBool Name="ImmediateTriggerContext" Value="1"/>
+        <FCInt Name="Radius" Value="80"/>
+        <FCInt Name="Button" Value="32"/>
+        <FCInt Name="HoverDelay" Value="100"/>
+      </FCParamGroup>
+      <FCParamGroup Name="3">
+        <FCParamGroup Name="Context">
+          <FCText Name="VertexSign">==</FCText>
+          <FCText Name="EdgeSign">==</FCText>
+          <FCText Name="FaceSign">==</FCText>
+          <FCText Name="ObjectSign">==</FCText>
+          <FCText Name="AxisSign">==</FCText>
+          <FCText Name="PlaneSign">==</FCText>
+          <FCBool Name="Enabled" Value="0"/>
+          <FCInt Name="VertexValue" Value="10"/>
+          <FCInt Name="EdgeValue" Value="10"/>
+          <FCInt Name="FaceValue" Value="10"/>
+          <FCInt Name="ObjectValue" Value="10"/>
+          <FCInt Name="AxisValue" Value="10"/>
+          <FCInt Name="PlaneValue" Value="10"/>
+        </FCParamGroup>
+        <FCParamGroup Name="Context2"/>
+        <FCParamGroup Name="Context3"/>
+        <FCParamGroup Name="Context4"/>
+        <FCText Name="TriggerMode"></FCText>
+        <FCBool Name="EnableShorcut" Value="0"/>
+      </FCParamGroup>
+      <FCText Name="0">View</FCText>
+      <FCText Name="IndexList">0.,.2.,.3.,.1.,.4.,.5</FCText>
+      <FCText Name="2">Sketcher</FCText>
+      <FCText Name="5">Sketcher constraints</FCText>
+      <FCText Name="1">PD Chamfer</FCText>
+      <FCText Name="4">PD Modeling</FCText>
+    </FCParamGroup>
+    <FCText Name="CurrentPie">View</FCText>
+    <FCText Name="Theme">Dark behave</FCText>
+    <FCText Name="GlobalShortcutKey">TAB</FCText>
+    <FCText Name="ContextPie">PD Chamfer</FCText>
+    <FCBool Name="ToolBar" Value="0"/>
+    <FCBool Name="ShowQuickMenu" Value="1"/>
+    <FCBool Name="EnableContext" Value="1"/>
+    <FCBool Name="GlobalKeyToggle" Value="1"/>
+    <FCInt Name="DelayRightClick" Value="100"/>
+  </FCParamGroup>
+
+</FCParameters>

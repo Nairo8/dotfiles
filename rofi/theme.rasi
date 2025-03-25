@@ -2,15 +2,41 @@
   cursor:             default;
   transparency:       "real";
   fullscreen:         false;
-  font:               "FOT-RodinPro DB 12";
-  bold-font:          "FOT-Rodin Pro UB 12";
-  prompt-font:        "FOT-RodinPro DB 48";
+  font:               "ReadexPro Normal Regular 12";
+  bold-font:          "ReadexPro Normal Bold 12";
+  prompt-font:        "ReadexPro Normal Medium 48";
   icon24:             "JetBrainsMonoNerdFontMono 24";
   icon48:             "JetBrainsMonoNerdFontMono 48";
-  main-bg:            rgba ( 42, 46, 50, 100 % );
-  main-fg:            rgba ( 243, 243, 243, 100 % );
-  select-bg:          @main-fg;
-  select-fg:          @main-bg;
-  tp-bg:              rgba ( 42, 46, 50, 80 % );
-  tp-fg:              rgba ( 243, 243, 243, 80 % );
+  main-bg:            @bg1;
+  main-fg:            @fg1;
+  select-bg:          @sel0;
+  select-fg:          @blue;
+
+/*****----- Original palette -----*****/
+  black:              #393b44ff;
+  red:                #c94f6dff;
+  green:              #81b29aff;
+  yellow:             #dbc074ff;
+  blue:               #719cd6ff; // icons, active ws, populated ws fg
+  magenta:            #9d79d6ff;
+  cyan:               #63cdcfff;
+  white:              #dfdfe0ff;
+  orange:             #f4a261ff;
+  pink:               #d67ad2ff;
+
+  comment:            #738091ff; // unpopulated ws fg
+
+  bg0:                #131a24ff; // dark background
+  bg1:                #192330ff; // widget group
+  bg2:                #212e3fff; // inactive slider
+  bg3:                #29394fff;
+  bg4:                #39506dff; // inactive border
+
+  fg0:                #d6d6d7ff;
+  fg1:                #cdcecfff; // text, tray icons
+  fg2:                #aeafb0ff; // slider nob
+  fg3:                #71839bff;
+
+  sel0:               #2b3b51ff; // populated ws bg, selection
+  sel1:               #3c5372ff;
 }

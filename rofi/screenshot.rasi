@@ -11,15 +11,15 @@ configuration {
 
 /*****----- Main Window -----*****/
 window {
-  width:                       14em;
+  width:                       400px;
   margin:                      5px;
   border:                      1px;
-  border-radius:               1.0em;
-  border-color:                @main-fg;
+  border-radius:               10px;
+  border-color:                @select-fg;
   location:                    north;
   anchor:                      center;
   cursor:                      "default";
-  background-color:            @tp-bg;
+  background-color:            @main-bg;
 }
 
 /*****----- Main Box -----*****/

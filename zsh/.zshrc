@@ -110,5 +110,6 @@ alias hx='helix'
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/.gtkrc-2.0"
 export GOPATH="$HOME/.local/share/go"
 export CARGO_HOME="$HOME/.local/share/cargo/.cargo"
+export TERMINAL="wezterm"
 
 export PATH="$PATH:$HOME/.local/bin:$GOPATH/bin"

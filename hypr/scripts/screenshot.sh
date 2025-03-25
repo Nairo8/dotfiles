@@ -28,6 +28,7 @@ save="$HOME/Pictures/Screenshots/${date}"
 case ${chosen} in
   $all)
     geom=""
+    selected=true
     ;;
   $display)
     geom=$(slurp -w 0 -o)
@@ -43,7 +44,7 @@ case ${chosen} in
 esac
 
 takescreenshot() {
-  if [ -z "$geom" ]; then
+  if [ -z "$geom" ] && [ $selected ]; then
     grim ${save}
   else
     grim -g "$geom" ${save}
