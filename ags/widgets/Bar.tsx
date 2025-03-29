@@ -7,6 +7,7 @@ import Battery from "gi://AstalBattery"
 import Wp from "gi://AstalWp"
 import Network from "gi://AstalNetwork"
 import Tray from "gi://AstalTray"
+import Bluetooth from "gi://AstalBluetooth"
 
 function SysTray() {
     const tray = Tray.get_default()
@@ -33,18 +34,44 @@ function SysTray() {
 function Wifi() {
     const { wifi } = Network.get_default()
 
-    return <icon
-        tooltipText={bind(wifi, "ssid").as(String)}
-        className="Wifi"
+    return <button className="Wifi"
+      onClicked={() => wifi.enabled = !wifi.enabled}>
+      <icon
+        tooltipText={bind(wifi, "enabled").as(e => e ? wifi.ssid : "")}
         icon={bind(wifi, "iconName")}
-    />
+      />
+    </button>
+}
+
+function BT() {
+  const bluetooth = Bluetooth.get_default()
+  const adapter = bluetooth.adapter
+  const deviceConnected = Variable.derive(
+    [bind(bluetooth, "devices"), bind(bluetooth, "isConnected"), bind(adapter, "powered")],
+    (devices, _, powered) => {
+      if (!powered) return ""
+      for (const device of devices) {
+        if (device.connected) return device.name
+      }
+      return "No device"
+    })
+
+  return <button
+    className="Bluetooth"
+    onClicked={() => bluetooth.toggle()}
+    tooltipText={deviceConnected()}
+  >
+    <icon icon={bind(adapter, "powered").as(p => p ? "bluetooth" : "bluetooth-disabled")}/>
+  </button>
 }
 
 function AudioSlider() {
     const speaker = Wp.get_default()?.audio.defaultSpeaker!
 
     return <box className="AudioSlider" css="min-width: 140px">
-        <icon icon={bind(speaker, "volumeIcon")} />
+        <button onClicked={() => speaker.mute = !speaker.mute}>
+          <icon icon={bind(speaker, "volumeIcon")} />
+        </button>
         <slider
             hexpand
             onDragged={({ value }) => speaker.volume = value}
@@ -101,7 +128,7 @@ function Workspaces() {
                     className={bind(hypr, "focusedWorkspace").as(fw =>
                         ws === fw ? "focused" : "")}
                     onClicked={() => ws.focus()}>
-                    {ws.id}
+                    {ws.id < 0 ? "S" : ws.id}
                 </button>
             ))
         )}
@@ -151,6 +178,7 @@ export default function Bar(monitor: Gdk.Monitor) {
             </box>
             <box hexpand halign={Gtk.Align.END} >
                 <SysTray />
+                <BT />
                 <Wifi />
                 <AudioSlider />
                 <BatteryLevel />
