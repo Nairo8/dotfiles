@@ -12,22 +12,16 @@ import Bluetooth from "gi://AstalBluetooth"
 function SysTray() {
     const tray = Tray.get_default()
 
-    return <box>
-        {bind(tray, "items").as(items => items.map(item => {
-            if (item.iconThemePath)
-                App.add_icons(item.iconThemePath)
-
-            const menu = item.create_menu()
-
-            return <button
+    return <box className="SysTray">
+        {bind(tray, "items").as(items => items.map(item => (
+            <menubutton
                 tooltipMarkup={bind(item, "tooltipMarkup")}
-                onDestroy={() => menu?.destroy()}
-                onClickRelease={self => {
-                    menu?.popup_at_widget(self, Gdk.Gravity.SOUTH, Gdk.Gravity.NORTH, null)
-                }}>
-                <icon gIcon={bind(item, "gicon")} />
-            </button>
-        }))}
+                usePopover={false}
+                actionGroup={bind(item, "actionGroup").as(ag => ["dbusmenu", ag])}
+                menuModel={bind(item, "menuModel")}>
+                <icon gicon={bind(item, "gicon")} />
+            </menubutton>
+        )))}
     </box>
 }
 
@@ -65,19 +59,15 @@ function BT() {
   </button>
 }
 
-function AudioSlider() {
+function AudioMute() {
     const speaker = Wp.get_default()?.audio.defaultSpeaker!
 
-    return <box className="AudioSlider" css="min-width: 140px">
-        <button onClicked={() => speaker.mute = !speaker.mute}>
-          <icon icon={bind(speaker, "volumeIcon")} />
-        </button>
-        <slider
-            hexpand
-            onDragged={({ value }) => speaker.volume = value}
-            value={bind(speaker, "volume")}
-        />
-    </box>
+    return <button
+      className="AudioSlider"
+      onClicked={() => speaker.mute = !speaker.mute}
+      >
+      <icon icon={bind(speaker, "volumeIcon")} />
+    </button>
 }
 
 function BatteryLevel() {
@@ -107,7 +97,7 @@ function Media() {
                 />
                 <label
                     label={bind(ps[0], "title").as(() =>
-                        `${ps[0].title} - ${ps[0].artist}`
+                        `${ps[0].title}`
                     )}
                 />
             </box>
@@ -180,7 +170,7 @@ export default function Bar(monitor: Gdk.Monitor) {
                 <SysTray />
                 <BT />
                 <Wifi />
-                <AudioSlider />
+                <AudioMute />
                 <BatteryLevel />
                 <Time />
             </box>

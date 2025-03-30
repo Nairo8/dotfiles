@@ -1,8 +1,16 @@
 import { App } from "astal/gtk3"
-import style from "./style.css"
+import style from "./style.scss"
 import Bar from "./widgets/Bar"
+import OSD from "./widgets/OSD"
+
+const windows = [
+  Bar,
+  OSD,
+]
 
 App.start({
     css: style,
-    main: () => App.get_monitors().map(Bar),
+    main() {
+      windows.map((windows) => App.get_monitors().map(windows))
+    },
 })
