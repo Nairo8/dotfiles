@@ -8,6 +8,7 @@ import Wp from "gi://AstalWp"
 import Network from "gi://AstalNetwork"
 import Tray from "gi://AstalTray"
 import Bluetooth from "gi://AstalBluetooth"
+import { mediaVisible} from "./MediaPlayer"
 
 function SysTray() {
     const tray = Tray.get_default()
@@ -87,20 +88,24 @@ function Media() {
 
     return <box className="Media">
         {bind(mpris, "players").as(ps => ps[0] ? (
-            <box>
-                <box
-                    className="Cover"
-                    valign={Gtk.Align.CENTER}
-                    css={bind(ps[0], "coverArt").as(cover =>
-                        `background-image: url('${cover}');`
-                    )}
-                />
-                <label
-                    label={bind(ps[0], "title").as(() =>
-                        `${ps[0].title}`
-                    )}
-                />
-            </box>
+            <button
+                onClicked={() => mediaVisible.set(!mediaVisible.get())}
+            >
+                <box>
+                    <box
+                        className="Cover"
+                        valign={Gtk.Align.CENTER}
+                        css={bind(ps[0], "coverArt").as(cover =>
+                            `background-image: url('${cover}');`
+                        )}
+                    />
+                    <label
+                        label={bind(ps[0], "title").as(() =>
+                            `${ps[0].title}`
+                        )}
+                    />
+                </box>
+            </button>
         ) : (
             "Nothing Playing"
         ))}

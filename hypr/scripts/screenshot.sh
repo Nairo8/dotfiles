@@ -31,7 +31,7 @@ case ${chosen} in
     selected=true
     ;;
   $display)
-    geom=$(slurp -w 0 -o)
+    geom=$(slurp -w 0 -o -r)
     ;;
   $window)
     workspaces="$(hyprctl monitors -j | jq -r '[(foreach .[] as $monitor (0; if $monitor.specialWorkspace.name == "" then $monitor.activeWorkspace else $monitor.specialWorkspace end)).id]')"

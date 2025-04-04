@@ -1,4 +1,5 @@
 @use "./style/OSD.scss";
+@use "./style/MediaPlayer.scss";
 
 @use "sass:color";
 
@@ -73,7 +74,7 @@ window.Bar {
         min-width: 1.2em;
         border-radius: $radius;
         background-position: center;
-        background-size: contain;
+        background-size: cover;
     }
 
     .Battery {
