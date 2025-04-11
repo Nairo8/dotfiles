@@ -42,8 +42,8 @@ function BT() {
   const bluetooth = Bluetooth.get_default()
   const adapter = bluetooth.adapter
   const deviceConnected = Variable.derive(
-    [bind(bluetooth, "devices"), bind(bluetooth, "isConnected"), bind(adapter, "powered")],
-    (devices, _, powered) => {
+    [bind(bluetooth, "devices"), bind(adapter, "powered")],
+    (devices, powered) => {
       if (!powered) return ""
       for (const device of devices) {
         if (device.connected) return device.name
@@ -54,9 +54,11 @@ function BT() {
   return <button
     className="Bluetooth"
     onClicked={() => bluetooth.toggle()}
-    tooltipText={deviceConnected()}
   >
-    <icon icon={bind(adapter, "powered").as(p => p ? "bluetooth" : "bluetooth-disabled")}/>
+    <icon
+      icon={bind(adapter, "powered").as(p => p ? "bluetooth" : "bluetooth-disabled")}
+      tooltipText={deviceConnected()}
+    />
   </button>
 }
 
@@ -64,10 +66,15 @@ function AudioMute() {
     const speaker = Wp.get_default()?.audio.defaultSpeaker!
 
     return <button
-      className="AudioSlider"
-      onClicked={() => speaker.mute = !speaker.mute}
-      >
-      <icon icon={bind(speaker, "volumeIcon")} />
+        className="AudioMute"
+        onClicked={() => speaker.mute = !speaker.mute}
+    >
+        <icon
+            icon={bind(speaker, "volumeIcon")}
+            tooltipText={bind(speaker, "volume").as(v =>
+            `${Math.floor(v * 100)}% `
+            )}
+        />
     </button>
 }
 
@@ -76,10 +83,12 @@ function BatteryLevel() {
 
     return <box className="Battery"
         visible={bind(bat, "isPresent")}>
-        <icon icon={bind(bat, "batteryIconName")} />
-        <label label={bind(bat, "percentage").as(p =>
+        <icon
+            icon={bind(bat, "batteryIconName")}
+            tooltipText={bind(bat, "percentage").as(p =>
             `${Math.floor(p * 100)}% `
-        )} />
+            )}
+        />
     </box>
 }
 
@@ -122,24 +131,12 @@ function Workspaces() {
                 <button
                     className={bind(hypr, "focusedWorkspace").as(fw =>
                         ws === fw ? "focused" : "")}
-                    onClicked={() => ws.focus()}>
+                    onClicked={() => ws.focus()}
+                >
                     {ws.id < 0 ? "S" : ws.id}
                 </button>
             ))
         )}
-    </box>
-}
-
-function FocusedClient() {
-    const hypr = Hyprland.get_default()
-    const focused = bind(hypr, "focusedClient")
-
-    return <box
-        className="Focused"
-        visible={focused.as(Boolean)}>
-        {focused.as(client => (
-            client && <label label={bind(client, "title").as(String)} />
-        ))}
     </box>
 }
 
@@ -153,6 +150,29 @@ function Time({ format = "%H:%M - %d.%m.%Y" }) {
         label={time()}
     />
 }
+
+function KeyboardLayout() {
+    const languages = {
+        "English (US)": "us",
+        "Slovak": "sk",
+        "Hungarian": "hu",
+    }
+    const layout = Variable("")
+        .observe(Hyprland.get_default(), "keyboard-layout", (_self, _keyboard, layout: string) => {
+            for (const lang in languages) {
+                if (layout.includes(lang)) {
+                    return languages[lang]
+                }
+            }
+            return "�"
+        })
+
+    return <label
+        className="KeyboardLayout"
+        label={layout()}
+    />
+}
+
 
 export default function Bar(monitor: Gdk.Monitor) {
     const anchor = Astal.WindowAnchor.TOP
@@ -173,6 +193,7 @@ export default function Bar(monitor: Gdk.Monitor) {
             </box>
             <box hexpand halign={Gtk.Align.END} >
                 <SysTray />
+                <KeyboardLayout />
                 <BT />
                 <Wifi />
                 <AudioMute />

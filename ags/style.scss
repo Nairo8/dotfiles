@@ -78,12 +78,8 @@ window.Bar {
     }
 
     .Battery {
-        margin-left: 8px;
-
-        label {
-            padding-left: 0;
-            margin-left: 0;
-        }
+        margin-left: 0px;
+        margin-right: 8px;
 
         icon {
             all: unset
